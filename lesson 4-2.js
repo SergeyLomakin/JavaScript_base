@@ -27,3 +27,30 @@ console.log(basket.countBasketPrice());
 (индекс продукта удаляет такой же индекс цены), но мне кажется такой подход не лучший,
 на сколько правильна такая реализация свойств (продукт и цена),
 и как всё-таки лучше?*/
+/*ВОПРОС БОЛЬШЕ НЕ АКТУАЛЕН, ПОНЯЛ, ЧТО ВЫПОЛНИЛ НЕПРАВИЛЬНО*/
+
+const basket = {
+    products: [
+        {
+            name: 'apple',
+            price: 65,
+            quntity: 1
+        },
+        {
+            name: 'banana',
+            price: 75,
+            quntity: 2
+        },
+        {
+            name: 'orange',
+            price: 90,
+            quntity: 1
+        }
+    ],
+
+    countBasketPrice() {
+        return this.products.reduce((totalPrice, cartItem) => totalPrice += cartItem.price * cartItem.quntity, 0);
+    }
+};
+
+console.log(basket.countBasketPrice());
